@@ -19,7 +19,11 @@ class CreatePerformersTable extends Migration
             $table->string('firstName');
             $table->string('lastName');
             $table->integer('age');
-            $table->
+            $table->string('address');
+            $table->string('country');
+            $table->string('email');
+            $table->string('password');
+            $table->integer('profile_pic');
             $table->timestamps();
         });
     }
