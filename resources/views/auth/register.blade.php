@@ -10,15 +10,73 @@
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
+                        <div class="form-group{{ $errors->has('userName') ? ' has-error' : '' }}">
+                            <label for="userName" class="col-md-4 control-label">User Name</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                                <input id="userName" type="text" class="form-control" name="userName" value="{{ old('userName') }}" required autofocus>
 
-                                @if ($errors->has('name'))
+                                @if ($errors->has('userName'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
+                                        <strong>{{ $errors->first('userName') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('firstName') ? ' has-error' : '' }}">
+                            <label for="username" class="col-md-4 control-label">First Name</label>
+
+                            <div class="col-md-6">
+                                <input id="firstName" type="text" class="form-control" name="firstName" value="{{ old('firstName') }}" required autofocus>
+
+                                @if ($errors->has('firstName'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('firstName') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('lastName') ? ' has-error' : '' }}">
+                            <label for="lastName" class="col-md-4 control-label">Last Name</label>
+
+                            <div class="col-md-6">
+                                <input id="lastName" type="text" class="form-control" name="lastName" value="{{ old('lastName') }}" required autofocus>
+
+                                @if ($errors->has('lastName'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('lastName') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+
+                        <div class="form-group{{ $errors->has('dob') ? ' has-error' : '' }}">
+                            <label for="dob" class="col-md-4 control-label">D.O.B</label>
+
+                            <div class="col-md-6">
+                                <input id="dob" type="text" class="form-control" name="dob" value="{{ old('dob') }}" required autofocus>
+
+                                @if ($errors->has('dob'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('dob') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+
+                        <div class="form-group{{ $errors->has('dob') ? ' has-error' : '' }}">
+                            <label for="country" class="col-md-4 control-label">Country</label>
+
+                            <div class="col-md-6">
+                                <input id="country" type="text" class="form-control" name="country" value="{{ old('country') }}" required autofocus>
+
+                                @if ($errors->has('country'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('country') }}</strong>
                                     </span>
                                 @endif
                             </div>
