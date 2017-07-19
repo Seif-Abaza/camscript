@@ -67,21 +67,6 @@
                             </div>
                         </div>
 
-
-                        <div class="form-group{{ $errors->has('dob') ? ' has-error' : '' }}">
-                            <label for="country" class="col-md-4 control-label">Country</label>
-
-                            <div class="col-md-6">
-                                <input id="country" type="text" class="form-control" name="country" value="{{ old('country') }}" required autofocus>
-
-                                @if ($errors->has('country'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('country') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
