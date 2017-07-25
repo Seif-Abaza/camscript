@@ -44,11 +44,19 @@
                     <div class="row">
                         <form class="form-horizontal" method="POST" action="{{ route('profilePicture') }}" enctype="multipart/form-data">
                             {{ csrf_field() }}
+                            <input name="userId" type="hidden" value="{{ $user->id }}"/>
                             <div class="col-md-10">Profile Picture: <input type="file" name="profilePicture" size="25" />
                             </div>
                             <div class="col-md-2"><input class="btn btn-primary" type="submit" name="submit" value="Submit"/></div>
                         </form>
                     </div>
+                    <br/><br/>
+
+                    @if($flash = session('message'))
+                        <div id="flash-message" class="alert alert-success" role="alert">
+                            {{ $flash }}
+                        </div>
+                    @endif
 
                 </div>
             </div>

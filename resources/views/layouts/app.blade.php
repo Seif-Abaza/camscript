@@ -48,7 +48,7 @@
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->userName }} <span class="caret"></span>
+                                    {{ Auth::user()->userName }}<div><img height="50px" width="50px" src="{{  Auth::user()->profilePicturePath }}>"/></div> <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
