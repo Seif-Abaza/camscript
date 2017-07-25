@@ -95,31 +95,31 @@ class UserController extends Controller
         $userId = $request->input('userId');
         $user = User::find($userId);
         $fileName = null;
-        //no errors... good
+        $url = $_SERVER['HTTP_HOST'];
+
         $validFile = true;
+
         if( $_FILES['profilePicture']['name'] ) {
             $fileName = $_FILES['profilePicture']['name'];
-            //Don't want to use tmp name here
-            //$newFileNameWithPath = strtolower($_FILES['profilePicture']['tmp_name']);;
             if( $_FILES['profilePicture']['size'] > 1024000 ){
                 $validFile = false;
                 $message = 'Oops! Your file\'s size is to large';
             }
-            $baseDir = 'C:/wamp/www/camscript/uploads/'; //I'll make dynamic later, need to get out now
+
+            $documentRoot = $_SERVER['DOCUMENT_ROOT'] . '/uploads/';
             if($validFile) {
-                $result = move_uploaded_file($_FILES['profilePicture']['tmp_name'], $baseDir . $_FILES['profilePicture']['name']);
+                $result = move_uploaded_file($_FILES['profilePicture']['tmp_name'], $documentRoot . $_FILES['profilePicture']['name']);
                 $message = 'Congratulations! Your file was accepted';
             }
         } else {
             $message = 'Oops! Your upload triggered the following error: ' . $_FILES['profilePicture']['error'];
         }
         if($result == true){
-            //TODO: Need to set up the path properly
-            $user->profilePicturePath = $baseDir . $fileName;
+            $user->profilePicturePath = 'http://' . $url. '/uploads/' . $fileName;
             $user->save();
-
             session()->flash('message', $message);
         }
+
         return view('user.show', compact('user'));
 
     }
