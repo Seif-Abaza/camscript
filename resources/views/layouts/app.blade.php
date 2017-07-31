@@ -12,6 +12,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/performer.css') }}" rel="stylesheet">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
@@ -46,11 +50,14 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->userName }}<div><img height="50px" width="50px" src="{{ Auth::user()->profilePicturePath }}"/></div> <span class="caret"></span>
+                            <div class="flex-container-row">
+                                @if(Auth::user()->profilePicturePath !== null)
+                                  <div><img height="50px" width="50px" src="{{ Auth::user()->profilePicturePath }}"/></div>
+                                @endif
+                            <li class="dropdown dropdown-loggedInMember">
+                                <a id="dropdown-link" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    {{ Auth::user()->userName }}<span class="caret"></span>
                                 </a>
-
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
                                         <a href="user/{{ Auth::user()->id }}">Profile</a>
@@ -71,6 +78,7 @@
                                     </li>
                                 </ul>
                             </li>
+                            </div>
                         @endif
                     </ul>
                 </div>
@@ -85,5 +93,6 @@
     <script src="{{ asset('js/main.js') }}"></script>
     <script src="//code.jquery.com/jquery-1.12.4.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 </body>
 </html>

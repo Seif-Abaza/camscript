@@ -1,0 +1,27 @@
+.flex-container-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.dropdown-loggedInMember {
+    margin-top: 24px;
+}
+
+a:link {
+    color: black;
+    text-decoration: none;
+}
+
+
+a:active {
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+.start-web-cam-label {
+    margin-top: 5px;
+}
+

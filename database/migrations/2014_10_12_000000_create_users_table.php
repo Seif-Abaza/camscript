@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('profilePicturePath')->nullable();
+            $table->boolean('performing')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

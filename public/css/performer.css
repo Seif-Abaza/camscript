@@ -1,0 +1,29 @@
+.performer-box-head {
+    background-color: #6e0a1c;
+    color: white;
+    text-align: center;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.performer-box-body {
+    height: 170px;
+    background-color: whitesmoke;
+    text-align: center;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    padding-top: 20px;
+    padding-left: 12px;
+    padding-right: 12px;
+
+}
+
+.performer-snap {
+    background-color: #abb0b0;
+    height: 100px;
+}
+
+.performer-footer {
+    margin-top: 6px;
+}
+
