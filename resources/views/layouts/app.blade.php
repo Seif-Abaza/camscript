@@ -50,6 +50,7 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
+                            <input type="hidden" id="hidden-user-id" value="{{ Auth::user()->id }}"/>
                             <div class="flex-container-row">
                                 @if(Auth::user()->profilePicturePath !== null)
                                   <div><img height="50px" width="50px" src="{{ Auth::user()->profilePicturePath }}"/></div>

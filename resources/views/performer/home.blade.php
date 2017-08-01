@@ -6,7 +6,8 @@
                 <div class="panel-heading">Start the fun</div>
                 <div class="panel-body">
                     <div class="flex-container-row">
-                    <label class="start-web-cam-label">Start web cam</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="starting-cam" type="checkbox" checked data-toggle="toggle">
+                    <label class="start-web-cam-label">Start web cam</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input class="starting-cam" type="checkbox" data-toggle="toggle">
                     </div>
                 </div>
             </div>

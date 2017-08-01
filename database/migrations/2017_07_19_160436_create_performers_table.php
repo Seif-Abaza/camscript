@@ -16,9 +16,9 @@ class CreatePerformersTable extends Migration
         Schema::create('performers', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->dateTime('start_performing');
-            $table->dateTime('end_performing');
-            $table->double('earning');
+            $table->dateTime('start_performing')->nullable();
+            $table->dateTime('end_performing')->nullable();
+            $table->double('earning')->nullable();
             $table->timestamps();
         });
     }

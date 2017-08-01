@@ -11,8 +11,28 @@ Main = {
 
         var $startingCam = $('.starting-cam');
         $startingCam.on('change', function(){
-            var $showStatus = $(this).closest('div').hasClass('off') ? 0 : 1;
-            //Have to make ajax call here
+            var $perform = $(this).closest('div').hasClass('off') ? false : true;
+            if($perform){
+                console.log("I'm sending data");
+                //AJAX call to store event in database.
+                var userId = parseInt($('#hidden-user-id').val());
+                if(typeof userId !== 'undefined'){
+
+                    $.ajax({
+                        type: "get",
+                        url: 'perform/setperformance',
+                        data: { 'id': userId },
+                        dataType: 'JSON',
+                        success: function(data){
+                            console.log('Success: ' + data);
+                        },
+                        error: function(data) { // What to do if we fail
+                            console.log('Error:' + data);
+                        }
+
+                    });
+                }
+            }
         })
 
     }
