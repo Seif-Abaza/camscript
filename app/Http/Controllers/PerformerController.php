@@ -36,14 +36,17 @@ class PerformerController extends Controller
     public function store(Request $request)
     {
         $id = $request->id;
-        Performer::create([
+        $result = Performer::create([
             'user_id' => $id,
             'start_performing' => date('Y-m-d H:i:s'),
             'end_performing' => date('Y-m-d H:i:s'),
             'earning' => 200
         ]);
 
-        return response()->json($id);
+        //I should return id of the latest entry
+        $performId = $result->id;
+
+        return response()->json($performId);
     }
 
     /**
