@@ -27,3 +27,40 @@
     margin-top: 6px;
 }
 
+.greenCircle, .grayCircle {
+    width: 32px;
+    height: 32px;
+    display: none;
+
+}
+
+.video-container {
+    height: 400px;
+    background-color: gray;
+}
+
+
+.chat-container-header {
+    height: 58px;
+}
+.chat-container {
+    height: 400px;
+}
+
+.text-input-chat, .button-send-chat {
+    margin-top: 340px;
+}
+
+.text-input-chat {
+    width: 85%;
+    height: 30px;
+    border-radius: 4px;
+}
+
+.button-send-chat {
+    height: 30px;
+    width: 15%;
+}
+
+
+

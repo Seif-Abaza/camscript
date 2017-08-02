@@ -9,11 +9,12 @@ Main = {
             $('#flash-message').hide('drop', { direction: 'up'}, 5000);
         }
 
+        $('.grayCircle').show();
+
         var $startingCam = $('.starting-cam');
         $startingCam.on('change', function(){
             var $perform = $(this).closest('div').hasClass('off') ? false : true;
             if($perform){
-                console.log("I'm sending data");
                 //AJAX call to store event in database.
                 var userId = parseInt($('#hidden-user-id').val());
                 if(typeof userId !== 'undefined'){
@@ -21,17 +22,24 @@ Main = {
                     $.ajax({
                         type: "get",
                         url: 'perform/setperformance',
-                        data: { 'id': userId },
+                        data: {'id': userId},
                         dataType: 'JSON',
-                        success: function(data){
-                            console.log('Success: ' + data);
+                        success: function (data) {
+                            $('.greenCircle').show();
+                            $('.grayCircle').hide();
+                            $('.video-container').css('backgroundColor', 'white').text('loading...');
                         },
-                        error: function(data) { // What to do if we fail
+                        error: function (data) { // What to do if we fail
                             console.log('Error:' + data);
                         }
 
                     });
                 }
+            } else {
+                $('.greenCircle').hide();
+                $('.grayCircle').show();
+                $('.video-container').css('backgroundColor', 'gray').text('');
+
             }
         })
 
