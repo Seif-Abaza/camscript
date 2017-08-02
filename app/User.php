@@ -27,4 +27,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Get performer record associate with the user
+     */
+    public function performer(){
+        return $this->hasOne('App\Peformer');
+    }
 }

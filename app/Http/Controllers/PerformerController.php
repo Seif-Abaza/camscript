@@ -39,6 +39,7 @@ class PerformerController extends Controller
     {
         $id = $request->id;
         $performing = $request->performing == 'true' ? true : false;
+        DB::update('update Users set performing = ? WHERE id = ?', [$performing, $id]);
 
         if($performing == true){
             //Perform has started so insert data in table without ending date
