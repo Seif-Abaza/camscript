@@ -28,6 +28,9 @@
                                 </div>
                             </div>
                             <div class="panel-body chat-container">
+                                <div class="chat-text-container">
+                                    <ul></ul>
+                                </div>
                                 <div class="flex-container-row">
                                     <input class="text-input-chat" type="text" class="text-input"/><input class="button-send-chat btn btn-primary" type="submit" value="Send"/>
                                 </div>
