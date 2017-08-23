@@ -35,7 +35,24 @@ class ChatController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $userId = $request->id;
+        $performing = $request->performing == 'true' ? true : false;
+        $textMessage = $request->textMessage;
+
+        if($userId == true && $performing == true){
+            //Save chat
+            $result = Chat::create([
+                'user_id' => $userId,
+                'textmessages' => $textMessage,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
+            //I should return id of the latest entry
+            $performId = $result->id;
+            return response()->json($performId);
+
+        }
+
     }
 
     /**

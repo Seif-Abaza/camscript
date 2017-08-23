@@ -32,6 +32,7 @@
                                     <ul></ul>
                                 </div>
                                 <div class="flex-container-row">
+                                    {{--<input type="hidden" id="token" value="{{{ csrf_token() }}">--}}
                                     <input class="text-input-chat" type="text" class="text-input"/><input class="button-send-chat btn btn-primary" type="submit" value="Send"/>
                                 </div>
                             </div>
