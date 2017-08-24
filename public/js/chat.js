@@ -5,6 +5,12 @@
 Chat = {
     temporaryText: null,
     init: function(){
+        $('.text-input-chat').attr('disabled', 'disabled');
+
+        if(Main.PERFORM == true) {
+            $('.text-input-chat').removeAttr('disabled');
+        }
+
         $('.button-send-chat ').on('click', function(){
             Chat.processingText();
         });
@@ -35,12 +41,14 @@ Chat = {
                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                 data: {
                     'id': userId,
-                    'performing': Main.PERFORM,
+                    'performingId': Main.PerformerId,
                     'textMessage': Chat.temporaryText,
                 },
                 dataType: 'JSON',
                 success: function (data) {
                     console.log(data);
+                    $('.chat-text-container').text('');
+                    $('.chat-text-container').text(data.text);
                 },
                 error: function (data) { // What to do if we fail
                     console.log('Error:' + data);

@@ -5,6 +5,7 @@
 Main = {
 
     PERFORM: null,
+    PerformerId: null,
     init: function(){
         if($('#flash-message').is(':visible')) {
             $('#flash-message').hide('drop', { direction: 'up'}, 5000);
@@ -19,6 +20,7 @@ Main = {
                 $('.greenCircle').show();
                 $('.grayCircle').hide();
                 $('.video-container').css('backgroundColor', 'white').text('loading...');
+                $('.text-input-chat').removeAttr('disabled');
             } else {
                 $('.greenCircle').hide();
                 $('.grayCircle').show();
@@ -38,6 +40,7 @@ Main = {
                     },
                     dataType: 'JSON',
                     success: function (data) {
+                        Main.PerformerId = parseInt(data);
 
                     },
                     error: function (data) { // What to do if we fail

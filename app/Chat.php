@@ -12,6 +12,10 @@ class Chat extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'textmessages', 'created_at', 'updated_at',
+        'user_id', 'performer_id', 'textmessages', 'created_at', 'updated_at',
     ];
+
+    public function performer() {
+        return $this->belongsTo('App\Performer');
+    }
 }
