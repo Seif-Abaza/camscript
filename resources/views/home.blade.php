@@ -9,15 +9,18 @@
                 <div class="panel-body">
                     @foreach($users as $user)
                         <div class="col-md-3">
-                            <div class="performber-box">
-                                <div class="performer-box-head">{{ $user->userName}}</div>
-                                <div class="performer-box-body">
-                                    <div class="performer-snap"></div>
-                                    <div class="performer-footer">
-                                        <span>Statistics</span>
+                            {{-- TODO: from $user get the performerId, now it will give an error --}}
+                            <a href="/performer/{{ $user->id }}">
+                                <div class="performber-box">
+                                    <div class="performer-box-head">{{ $user->userName}}</div>
+                                    <div class="performer-box-body">
+                                        <div class="performer-snap"></div>
+                                        <div class="performer-footer">
+                                            <span>Statistics</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     @endforeach
                 </div>

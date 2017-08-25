@@ -70,7 +70,10 @@ class PerformerController extends Controller
      */
     public function show(Performer $performer)
     {
-        //
+
+        return view('performer.show', compact('performer'));
+
+
     }
 
     /**
