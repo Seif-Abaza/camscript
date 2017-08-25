@@ -67,7 +67,7 @@ class ChatController extends Controller
                 $chats = Chat::where('id', $chats->id)->first();
                 $chats->user_id = $chats->user_id;
                 $chats->performer_id = $chats->performer_id;
-                $chats->textmessages = $existingText . '\n' . $textMessage . '\n';
+                $chats->textmessages = $existingText . ',' . $textMessage . ',';
                 $chats->created_at = $chats->created_at;
                 $chats->updated_at = date('Y-m-d H:i:s', strtotime('now'));
                 $chats->save();

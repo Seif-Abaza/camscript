@@ -24,10 +24,6 @@ Chat = {
     },
 
     processingText: function () {
-        $('.chat-text-container').find('ul').append(
-            '<li>' + $('.text-input-chat').val() + '</li>'
-        );
-
         Chat.temporaryText =   $('.text-input-chat').val();
         $('.text-input-chat').val('');
 
@@ -46,9 +42,15 @@ Chat = {
                 },
                 dataType: 'JSON',
                 success: function (data) {
-                    console.log(data);
-                    $('.chat-text-container').text('');
-                    $('.chat-text-container').text(data.text);
+                    $('.chat-text-container').find('ul li').remove();
+
+                    //Lets process text to array here
+                    var textArray = data.text.split(',');
+                    textArray.forEach(function (item){
+                        $('.chat-text-container').find('ul').append(
+                            '<li>' + item + '</li>'
+                        )
+                    });
                 },
                 error: function (data) { // What to do if we fail
                     console.log('Error:' + data);
