@@ -23,3 +23,5 @@ Route::get('/perform/show/{id}', 'PerformerController@show');
 Route::get('user/{id}', 'UserController@show')->name('user');
 Route::post('upload_profile_picture', 'UserController@profilePicture')->name('profilePicture');
 Route::get('perform/setperformance', 'PerformerController@store');
+Route::get('/performer/{performer}', 'PerformerController@show');
+Route::post('chat_store', 'ChatController@store');
