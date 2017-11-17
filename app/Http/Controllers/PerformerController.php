@@ -11,10 +11,10 @@ class PerformerController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         return view('performer.home');
     }
@@ -65,12 +65,13 @@ class PerformerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Performer  $performer
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function show(Performer $performer)
+    public function show(Request $request)
     {
-        //
+        $userId = $request->id;
+        return view('performer.home');
     }
 
     /**

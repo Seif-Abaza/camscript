@@ -8,8 +8,8 @@
                 <div class="panel-heading">Dashboard</div>
                 <div class="panel-body">
                     @foreach($users as $user)
-                        <div class="col-md-3">
-                            <div class="performber-box">
+                        <a href="/perform/show/{{ $user->id }}"><div class="col-md-3">
+                            <div class="performer-box">
                                 <div class="performer-box-head">{{ $user->userName}}</div>
                                 <div class="performer-box-body">
                                     <div class="performer-snap"></div>
@@ -17,8 +17,9 @@
                                         <span>Statistics</span>
                                     </div>
                                 </div>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     @endforeach
                 </div>
             </div>

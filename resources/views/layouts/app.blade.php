@@ -65,6 +65,7 @@
                                     </li>
                                     <li>
                                         <a href="{{ route('perform') }}">I want to perform</a>
+                                        <!--<a href="/perform/{{ Auth::user()->id }}">I want to perform</a>-->
                                     </li>
                                     <li>
                                         <a href="{{ route('logout') }}"

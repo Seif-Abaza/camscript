@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/perform', 'PerformerController@index')->name('perform');
+Route::get('/perform/show/{id}', 'PerformerController@show');
 Route::get('user/{id}', 'UserController@show')->name('user');
 Route::post('upload_profile_picture', 'UserController@profilePicture')->name('profilePicture');
 Route::get('perform/setperformance', 'PerformerController@store');
